@@ -22,7 +22,7 @@ public class Arreglo {
                 bandera = false;
 
             } catch (java.util.InputMismatchException ex) {
-                System.out.println("Error!!" + "\n Por favor ingrese un numero");
+                System.out.println("Error");
             }
 
         } while (bandera);
@@ -36,15 +36,15 @@ public class Arreglo {
         tamanio = Arreglo.ingresoInt();
 
         if (tamanio < 0) {
-            System.out.println("Error el tamanio debe ser un numero positivo");
+            System.out.println("Error");
         } else if (tamanio == 1) {
 
             Persona personas[] = new Persona[tamanio];
 
-            System.out.println("ingrese el nombre de la persona: ");
+            System.out.println("ingrese los nombres: ");
             Scanner entrada = new Scanner(System.in);
             String nombre = entrada.nextLine();
-            System.out.println("ingrese el nombre de la persona: ");
+            System.out.println("ingrese los apellidos: ");
             String apellido = entrada.nextLine();
             System.out.println("Ingrese el genero");
             boolean bandera = true;
@@ -68,8 +68,7 @@ public class Arreglo {
                             bandera = false;
                             break;
                         default:
-                            System.out.println("La opcion ingresada no corresponde a ningun genero\n"
-                                    + "Por favor seleccione una opcion del listado");
+                            System.out.println("La opcion ingresada no corresponde a ningun genero");
 
                     }
                 } catch (java.util.InputMismatchException ex) {
@@ -80,9 +79,9 @@ public class Arreglo {
             } while (bandera);
             System.out.println("Ingrese la edad: ");
             int edad = Arreglo.ingresoInt();
-            System.out.println("Ingrese la estatura en cm (valor entero)");
+            System.out.println("Ingrese la estatura: ");
             int estatura = Arreglo.ingresoInt();
-            System.out.println("Ingrese el peso en kg (valor entero)");
+            System.out.println("Ingrese el peso: ");
             int peso = Arreglo.ingresoInt();
 
             Persona p = new Persona(nombre, apellido, edad, genero, estatura, peso);
@@ -96,10 +95,10 @@ public class Arreglo {
             for (int i = 0; i < personas.length; i++) {
                 System.out.println("Datos Persona " + (i + 1));
 
-                System.out.println("ingrese el nombre de la persona: ");
+                System.out.println("ingrese los nombres: ");
                 Scanner entrada = new Scanner(System.in);
                 String nombre = entrada.nextLine();
-                System.out.println("ingrese el apelllido de la persona: ");
+                System.out.println("ingrese los apellidos: ");
                 String apellido = entrada.nextLine();
                 System.out.println("Ingrese el genero");
                 boolean genero = false;
@@ -124,21 +123,19 @@ public class Arreglo {
                                 bandera = false;
                                 break;
                             default:
-                                System.out.println("La opcion ingresada no corresponde a ningun genero\n"
-                                        + "Por favor seleccione una opcion del listado");
+                                System.out.println("La opcion ingresada no corresponde a ningun genero");
 
                         }
                     } catch (java.util.InputMismatchException ex) {
-                        System.out.println("Error!!\n"
-                                + "Por favor ingrese un numero");
+                        System.out.println("Por favor ingrese un numero: ");
                     }
 
                 } while (bandera);
                 System.out.println("Ingrese la edad: ");
                 int edad = Arreglo.ingresoInt();
-                System.out.println("Ingrese la estatura en cm (valor entero)");
+                System.out.println("Ingrese la estatura: ");
                 int estatura = Arreglo.ingresoInt();
-                System.out.println("Ingrese el peso en kg (valor entero)");
+                System.out.println("Ingrese el peso");
                 int peso = Arreglo.ingresoInt();
 
                 Persona p = new Persona(nombre, apellido, edad, genero, estatura, peso);
@@ -150,43 +147,36 @@ public class Arreglo {
 
         }
     }
-//Retorne el nombre de cada persona.
-
+    
     public String consultaNombre(int indice) {
         String nombre = personas[indice].getNombre();
         return nombre;
     }
-//Retorne el Apellido de cada persona.
 
     public String consultaApellido(int indice) {
         String apellido = personas[indice].getApellido();
         return apellido;
     }
-//Retorne la edad de cada persona.
 
     public int consultaEdad(int indice) {
         int edad = personas[indice].getEdad();
         return edad;
     }
-//Retorne el género de cada persona.
 
     public boolean consultaGenero(int indice) {
         boolean genero = personas[indice].isGenero();
         return genero;
     }
-//Retorne la estatura de cada persona.
 
     public int consultaEstatura(int indice) {
         int estatura = personas[indice].getEstatura();
         return estatura;
     }
-//Retorne la peso de cada persona.
 
     public int consultaPeso(int indice) {
         int peso = personas[indice].getPeso();
         return peso;
     }
-//Retorne todos los atributos de la persona.
 
     public Persona consultaAtrubutos(int indice) {
         String nombre = personas[indice].getNombre();
@@ -197,7 +187,6 @@ public class Arreglo {
         int peso = personas[indice].getPeso();
         return new Persona(nombre, apellido, edad, genero, estatura, peso);
     }
-//Determine cuál es la persona con mayor peso.
 
     public String mayorPeso() {
         int mayor = -2147483647;
@@ -210,12 +199,10 @@ public class Arreglo {
             }
 
         }
-        String elMayor = "La persona con mayor peso es " + personas[indice].getNombre();
-        return elMayor;
+        String Mayor = "La persona con mayor peso es: " + personas[indice].getNombre();
+        return Mayor;
     }
     
-//Determine cuál es la persona con menor estatura.
-
     public String menorEstatura() {
         int menor = 2147483647;
         int indice = 0;
@@ -227,8 +214,8 @@ public class Arreglo {
             }
 
         }
-        String elMenor = "La persona con menor estatura es " + personas[indice].getNombre();
-        return elMenor;
+        String Menor = "La persona con menor estatura es: " + personas[indice].getNombre();
+        return Menor;
     }
 
 }

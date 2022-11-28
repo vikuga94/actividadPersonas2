@@ -3,13 +3,6 @@ package com.mycompany.actividadpersonas2;
  *
  * @author SEvguzman
  */
-/**
- *
- * Definir una clase que permita crear una estructura de datos capaz de
- * almacenar los datos de una persona como lo son el nombre, Apellido, edad,
- * género, estatura y peso. Se debe de guardar esta clase con el nombre de
- * Persona
- */
 public class Persona {
 
     private String nombre;
@@ -18,9 +11,6 @@ public class Persona {
     private boolean genero;
     private int estatura;
     private int peso;
-
-    public Persona() {
-    }
 
     public Persona(String nombre, String apellido, int edad, boolean genero, int estatura, int peso) {
         this.nombre = nombre;
@@ -81,8 +71,8 @@ public class Persona {
 
     @Override
     public String toString() {
-        String texto = "Nombre: " + nombre + "\n"
-                + "Apellido: " + apellido + "\n"
+        String texto = "Nombres: " + nombre + "\n"
+                + "Apellidos: " + apellido + "\n"
                 + "Edad: " + edad + "\n"
                 + "Genero: " + genero + "\n"
                 + "Estatura: " + estatura + "\n"
